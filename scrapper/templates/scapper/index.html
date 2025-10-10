@@ -6,9 +6,13 @@
     <title>Scapper</title>
 </head>
 <body>
-    {% for link in links %}
-        <p>{{ link }}</p>
-        <br>
-    {% endfor %}
+    <input type="text" id="linkInput" placeholder="Enter a link">
+    <button id="addLinkButton">Add Link</button>
+    <div id="linkList">
+        {% for link in links %}
+            <p>{{ link }}</p>
+            <br>
+        {% endfor %}
+    </div>
 </body>
 </html>
