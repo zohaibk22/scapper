@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scapper</title>
+    <title>Scrapper</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -45,13 +45,24 @@
     </style>
 </head>
 <body>
-    <input type="text" id="linkInput" placeholder="Enter a link">
-    <button id="addLinkButton">Add Link</button>
-    <div id="linkList">
+    <form method="POST">
+        <input type="text" id="linkInput" name="url" placeholder="Enter a link">
+        <button id="addLinkButton">Add Link</button>
+        {% csrf_token %}
+    </form>
+
+    {% if not links %}
+        <h2>No links found</h2>
+    {% else %}
+        <h2>Links found:</h2>
+        <div id="linkList">
         {% for link in links %}
             <p>{{ link.name }} ---> {{ link.address }}</p>
             <br>
         {% endfor %}
     </div>
+    {% endif %}
+
+   
 </body>
 </html>

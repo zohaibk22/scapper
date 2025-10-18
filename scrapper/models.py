@@ -4,6 +4,7 @@ from django.db import models
 class Link(models.Model):
     address = models.CharField(max_length=2048, null=True, blank=True, unique=True)
     name = models.CharField(max_length=2048, null=True, blank=True)
+    website_name = models.CharField(max_length=256, null=True, blank=True)
 
     class Meta:
         verbose_name = "Link"
