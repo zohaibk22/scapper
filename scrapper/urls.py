@@ -19,5 +19,6 @@ from django.urls import path
 from scrapper import views
 
 urlpatterns = [
-    path(route='links/', view=views.index, name='index')
+    path(route='links/', view=views.index, name='index'),
+    path(route='links/all/', view=views.get_all_links, name='all_links')
 ]

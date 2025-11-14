@@ -56,13 +56,34 @@
     {% else %}
         <h2>Links found:</h2>
         <div id="linkList">
-        {% for link in links %}
-            <p>{{ link.name }} ---> {{ link.address }}</p>
-            <br>
-        {% endfor %}
-    </div>
+            <style>
+                .link-item {
+                    display: grid;
+                    grid-template-columns: 150px 1fr;
+                    gap: 16px;
+                    padding: 12px;
+                    border-bottom: 1px solid #e9ecef;
+                    align-items: center;
+                }
+                .link-item:last-child {
+                    border-bottom: none;
+                }
+                .link-name {
+                    font-weight: bold;
+                    color: #495057;
+                }
+                .link-address {
+                    color: #007bff;
+                    word-break: break-all;
+                }
+            </style>
+            {% for link in links %}
+                <div class="link-item">
+                    <span class="link-name">{{ link.name }}</span>
+                    <span class="link-address">{{ link.address }}</span>
+                </div>
+            {% endfor %}
+        </div>
     {% endif %}
-
-   
 </body>
 </html>

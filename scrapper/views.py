@@ -24,3 +24,16 @@ def index(request):
         data = []
 
     return render(request=request, template_name='scrapper/index.html', context={'links': data})
+
+
+
+def get_all_links(request):
+    try:
+        data = Link.objects.all()
+    except Exception as e:
+        # Log the error or handle it appropriately
+        data = []
+    
+    return render(request=request, template_name='scrapper/all_links.html', context={'links': data})
+
+   
