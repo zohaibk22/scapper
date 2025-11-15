@@ -21,4 +21,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('scrapper.urls'), name='scrapper_main_page'),
+    path('', include('db_details.urls'), name='db_details')
 ]

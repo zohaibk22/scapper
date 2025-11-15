@@ -8,7 +8,8 @@ def index(request):
     url = ''
     if request.method == 'POST':
         url = request.POST.get('url', '')
-    if url:
+        action = request.POST.get('action', '')
+    if url and action != 'clear':
         page = requests.get(url)
         soup = BeautifulSoup(page.content, 'html.parser')
         
@@ -37,3 +38,6 @@ def get_all_links(request):
     return render(request=request, template_name='scrapper/all_links.html', context={'links': data})
 
    
+def delete_all(request):
+    Link.objects.all().delete()
+    return render(request=request, template_name='scrapper/index.html')

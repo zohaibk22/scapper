@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Local apps
     'scrapper.apps.ScrapperConfig',
+    'db_details.apps.DbDetailsConfig',
 ]
 
 MIDDLEWARE = [
