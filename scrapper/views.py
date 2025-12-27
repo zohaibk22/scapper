@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 import requests
 from bs4 import BeautifulSoup
 from .models import Link
@@ -41,3 +42,9 @@ def get_all_links(request):
 def delete_all(request):
     Link.objects.all().delete()
     return render(request=request, template_name='scrapper/index.html')
+
+
+
+
+def health_check(request):
+    return HttpResponse("OK", status=200)

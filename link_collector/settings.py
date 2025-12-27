@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-egym(h20@$hcxxjmj_zzm+ogy_c_(ze-%9mgr_vg5@fzjsca07
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('localhost', '0.0.0.1'), 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ["*", os.environ.get('localhost', '0.0.0.1'), 'localhost', '127.0.0.1']
 
 # Application definition
 
